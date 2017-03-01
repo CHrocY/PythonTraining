@@ -20,7 +20,7 @@ def words_replace(word, words):
 
 
 def main(words):
-	"""重构后的代码，将每个功能都细分了，如果以后想用哪个
+	"""重构后的代码，将每个功能都进行细分，如果以后想用哪个
 	功能，这里就有分成小模块的功能可用，接口一定要简洁，参
 	数也要简单明了，这真是很难兼得。"""
 	words_list = filter_words_list()
