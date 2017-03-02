@@ -9,7 +9,7 @@ import re
 def count_words(filename):
 	f = open(filename, 'rb').read()
 	words = re.findall(r'[\w]+', f)
-	print len(words)
+	print(len(words))
 	return 0
 
 

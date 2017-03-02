@@ -29,7 +29,7 @@ for i in lists:
 		dicts[i] += 1  # 已经有了就更新键值对，其值+1
 for n in dicts.keys():
 	if dicts[n] == max(dicts.values()):  # max是很好用，找出最大的值
-		print u'出现次数最多的IP是：', n
+		print(u'出现次数最多的IP是：', n)
 
 # 这个是使用内置方法的版本，明显太快了。
 words = [
@@ -39,4 +39,4 @@ words = [
 	'my', 'eyes', "you're", 'under'
 ]
 r = Counter(words).most_common(1)
-print u'出现次数最多的单词是：%s, 出现了%s次' % (r[0][0], r[0][1])
+print(u'出现次数最多的单词是：%s, 出现了%s次' % (r[0][0], r[0][1]))
