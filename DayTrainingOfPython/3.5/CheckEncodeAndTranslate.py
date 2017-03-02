@@ -13,7 +13,7 @@ from chardet.universaldetector import UniversalDetector
 parser = argparse.ArgumentParser(description='文本文件编码检测与转换')
 # 通过ArgumentParser对象调用它的方法add_argument()添加脚本的参数信息到自身
 # nargs='+'表示所有命令行参数都被收集到一个列表中，跟正则表达式中'+'类似，至少
-# 需要1个参数，这里很容易理解，我们至少需要放入一个文件呀！nargs还可以有其他的参
+# 需要1个参数，这里很容易理解，我们至少需要放入一个文件！nargs还可以有其他的参
 # 数，详细的查看文档
 parser.add_argument('filePaths', nargs='+',
                     help='检测或转换文件路径')
