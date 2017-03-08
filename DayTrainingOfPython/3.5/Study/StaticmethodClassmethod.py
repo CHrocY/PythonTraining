@@ -11,8 +11,11 @@ def foo(x):
 
 
 class A(object):
-	def foo(self, x):
-		print("executing foo({0}, {1}".format(self, x))
+	def __init__(self, x):
+		self.x = x
+
+	def foo(self):
+		print("executing foo({0}, {1}".format(self, self.x))
 
 	@classmethod
 	def class_foo(cls, x):
@@ -26,7 +29,7 @@ class A(object):
 
 
 # 这里需要先将类实例化，不然对于foo函数来说，它是不能正常工作的。
-a = A()
+a = A(23)
 # The foo is just a function, but when you call a.foo you don't just get
 # the function, you get a "partially applied" version of the function
 # with the object instance a bound as the first argument to the function.
@@ -34,7 +37,7 @@ a = A()
 #
 # And a is bound to foo. That is what is meant by the term "bound" below:
 print(a.foo)  # <bound method A.foo of <__main__.A object at 0xb7d52f0c>>
-a.foo(1)
+a.foo()
 
 # With a.class_foo, a is not bound to class_foo, rather the class A is
 # bound to class_foo
@@ -49,3 +52,4 @@ print(a.static_foo)  # <function static_foo at 0xb7d479cc>
 # 它们可以直接调用类，这样也能正常工作。
 A.class_foo(1)
 A.static_foo(1)
+
