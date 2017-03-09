@@ -23,6 +23,7 @@ class ArithmeticSequence:
 		try: return self.changed[key]
 		# 没有值就计算值
 		except KeyError:
+			# 加一句输出，控制台上就知道我们计算过咯～
 			print("Calculate new value")
 			return self.start + key*self.step
 
@@ -34,4 +35,5 @@ class ArithmeticSequence:
 
 s = ArithmeticSequence(10, 2)  # 初始化一个从10开始，步长为2的实例
 print(s[4])  # 询问s[4]这个key的值，只会调用__getitem__方法
-s[20] = 1  # 将s[20]这个key的值赋为1，只会调用__setitem__方法
+s[20] = 1  # 将s[20]这个key的value赋值为1，只会调用__setitem__方法
+print(s[20])
